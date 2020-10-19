@@ -23,7 +23,7 @@
                       src="https://png.pngtree.com/png-vector/20190815/ourlarge/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1692654.jpg"
                     />
                     <p class="text-lg text-white mt-4 font-semibold">
-                      LED  {{ ledtest ?  'ON' : 'OFF' }}
+                      LED  {{ isLoading ? 'Loading...' :  (ledtest ?  'ON' : 'OFF') }}
                     </p>
                   </div>
                 </a>
@@ -42,6 +42,7 @@
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 import CardLineChart from "@/components/Cards/CardLineChart.vue";
+
 export default {
   components: {
     IndexNavbar,
@@ -51,21 +52,25 @@ export default {
   data () {
     return {
       ledtest : 0,
+      isLoading : 0,
     }
   },
+
   methods : {
       publishLed: function (event) {
         event.preventDefault();
         var topic = 'tekkoma/led';
-        this.$mqtt.publish(topic, (this.ledtest) ? '1':'0');
+        this.$mqtt.publish(topic, (this.ledtest) ? '0':'1');
+        this.isLoading = 1;
       }
   },
   mqtt : {
       '+/led'(data){
         // topic = topic.split('/').pop() ;
         // this.led[parseInt(topic)] = this.led[parseInt(topic)] ? 0 : 1; 
-        console.log(data.toString());
-        this.ledtest = this.ledtest ? 0 : 1;
+        this.isLoading = 0;
+        console.log(this.loading);
+        this.ledtest = parseInt(data) ? 1 : 0;
       }
   }
 }

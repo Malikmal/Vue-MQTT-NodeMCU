@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import VueMqtt from 'vue-mqtt';
+
 // styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -99,11 +100,18 @@ const routes = [
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
-Vue.use(VueMqtt, ' wss://test.mosquitto.org:8081');
-
+// Vue.use(VueMqtt, 'mqtt://test.mosquitto.org/:1883', {
+//   wsOptions : {},
+//   cmd: 'connect',
+//   protocolId : 'MQTT',
+//   protocolVersion: 4,
+//   clean: true, // Can also be false
+// });//'wss://test.mosquitto.org:8081');
+Vue.use(VueMqtt, 'wss://test.mosquitto.org:8081');
 const router = new VueRouter({
   routes,
 });
+
 
 new Vue({
   router,
