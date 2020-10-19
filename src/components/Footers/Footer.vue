@@ -65,7 +65,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/presentation?ref=vn-footer"
+                    href="#"
                   >
                     About Us
                   </a>
@@ -73,7 +73,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://blog.creative-tim.com?ref=vn-footer"
+                    href="#"
                   >
                     Blog
                   </a>
@@ -81,7 +81,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/creativetimofficial?ref=vn-footer"
+                    href="https://www.github.com"
                   >
                     Github
                   </a>
@@ -89,7 +89,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/bootstrap-themes/free?ref=vn-footer"
+                    href="#"
                   >
                     Free Products
                   </a>
@@ -103,18 +103,18 @@
                 Other Resources
               </span>
               <ul class="list-unstyled">
-                <li>
+                <!-- <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                     href="https://github.com/creativetimofficial/vue-notus/blob/master/LICENSE.md?ref=vn-footer"
                   >
                     MIT License
                   </a>
-                </li>
+                </li> -->
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/terms?ref=vn-footer"
+                    href="#"
                   >
                     Terms & Conditions
                   </a>
@@ -122,7 +122,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/privacy?ref=vn-footer"
+                    href="#"
                   >
                     Privacy Policy
                   </a>
@@ -130,7 +130,7 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/contact-us?ref=vn-footer"
+                    href="#"
                   >
                     Contact Us
                   </a>
@@ -146,12 +146,12 @@
       >
         <div class="w-full md:w-4/12 px-4 mx-auto text-center">
           <div class="text-sm text-gray-600 font-semibold py-1">
-            Copyright © {{ date }} Vue Notus by
+            Copyright © {{ date }} IoT-Control by
             <a
-              href="https://www.creative-tim.com?ref=vn-footer"
+              href="https://github.com/Malikmal"
               class="text-gray-600 hover:text-gray-900"
             >
-              Creative Tim
+              Kelompok 3
             </a>
             .
           </div>

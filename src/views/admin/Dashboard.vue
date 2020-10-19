@@ -2,6 +2,8 @@
   <div>
     <div class="flex flex-wrap">
       <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+      
+      
         <card-line-chart />
       </div>
       <div class="w-full xl:w-4/12 px-4">
@@ -31,5 +33,32 @@ export default {
     CardPageVisits,
     CardSocialTraffic,
   },
+ data(){
+   return {
+     message : 'Subs 1  : <br>'
+   }
+ },
+ methods : {
+    // publish1 () {
+    //   this.$mqtt.publish('VueMqtt/publish1', 'message to Sub1')
+    // },
+    publish2 () {
+      this.$mqtt.publish('tekkoma/led', 'message to Sub2');
+    }
+ },
+ mqtt : {
+    /** 'VueMqtt/publish2' or '+/publish2' */
+    '+/publish2' (data) {
+        // this.buff = this.buff + data + '<br>'
+        console.log(data);
+    },
+   'tekkoma/+' (data, topic){
+     if(topic.split('/').pop() === 'led'){
+       console.log('topic : ', 'tekkoma/led : ');
+       console.log(data.toString());
+     }
+   },
+  
+ }
 };
 </script>

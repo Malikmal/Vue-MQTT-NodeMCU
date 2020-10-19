@@ -26,35 +26,79 @@
 import Chart from "chart.js";
 
 export default {
+  data() {
+    return {
+      potensio1 : [0,0],
+      potensio2 : [0,0],
+      myLine : {},
+    }
+  },
+  mqtt : {
+    '+/potensio/+' (data, topic){
+      var dataObj = {
+        x : new Date(),
+        y : parseInt(data),
+      };
+
+      if(topic.split('/').pop() === '1'){
+        // this.potensio1.push(parseInt(data));
+        window.myLine.data.datasets[0].data.push(dataObj);
+        window.myLine.data.datasets[0].data.shift();
+        window.myLine.update();
+      }
+      // else if(topic.split('/').pop() === '2'){
+      //   window.myLine.data.datasets[1].data.push(dataObj);
+      //   window.myLine.data.datasets[1].data.shift();
+      //   window.myLine.update();
+      // }
+      // console.log(this.potensio1);
+    }
+  },
   mounted: function () {
     this.$nextTick(function () {
       var config = {
         type: "line",
         data: {
           labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
           ],
           datasets: [
             {
-              label: new Date().getFullYear(),
+              label: 'Potensio #1',
               backgroundColor: "#4c51bf",
               borderColor: "#4c51bf",
-              data: [65, 78, 66, 44, 56, 67, 75],
+              data: [
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                {x : new Date(),y : 0,},
+                
+              ],
               fill: false,
             },
-            {
-              label: new Date().getFullYear() - 1,
-              fill: false,
-              backgroundColor: "#fff",
-              borderColor: "#fff",
-              data: [40, 68, 86, 74, 56, 60, 87],
-            },
+            // {
+            //   label: 'Potensio #2',
+            //   fill: false,
+            //   backgroundColor: "#fff",
+            //   borderColor: "#fff",
+            //   data:[ 
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //     {x : new Date(),y : 0,},
+            //   ],
+            // },
           ],
         },
         options: {
@@ -62,7 +106,7 @@ export default {
           responsive: true,
           title: {
             display: false,
-            text: "Sales Charts",
+            text: "Potensiometer Data",
             fontColor: "white",
           },
           legend: {
@@ -83,13 +127,22 @@ export default {
           scales: {
             xAxes: [
               {
+                type:'time',
+                distribution: 'series',
+                time: {
+                  unit: 'second',
+                  displayFormats: {
+                    second: 'mm:ss'
+                  }
+                },
                 ticks: {
                   fontColor: "rgba(255,255,255,.7)",
+                  source: 'auto',
                 },
                 display: true,
                 scaleLabel: {
-                  display: false,
-                  labelString: "Month",
+                  display: true,
+                  labelString: "Time",
                   fontColor: "white",
                 },
                 gridLines: {
@@ -129,7 +182,8 @@ export default {
         },
       };
       var ctx = document.getElementById("line-chart").getContext("2d");
-      window.myLine = new Chart(ctx, config);
+       window.myLine = new Chart(ctx, config);
+      
     });
   },
 };

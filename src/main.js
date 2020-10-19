@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import VueMqtt from 'vue-mqtt';
 // styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -32,6 +32,7 @@ import Register from "@/views/auth/Register.vue";
 import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
 import Index from "@/views/Index.vue";
+import IoTControl from "@/views/IoTControl.vue";
 
 // routes
 
@@ -79,12 +80,16 @@ const routes = [
     component: Landing,
   },
   {
+    path: "/iot-control",
+    component: Index,// IoTControl,
+  },
+  {
     path: "/profile",
     component: Profile,
   },
   {
     path: "/",
-    component: Index,
+    component: IoTControl,// Index,
   },
   { path: "*", redirect: "/" },
 ];
@@ -94,6 +99,7 @@ const routes = [
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
+Vue.use(VueMqtt, ' wss://test.mosquitto.org:8081');
 
 const router = new VueRouter({
   routes,
@@ -102,4 +108,33 @@ const router = new VueRouter({
 new Vue({
   router,
   render: (h) => h(App),
+  // mqtt: {
+  //   'param/+/+/test': function(val) {
+  //     console.log('param/+/+/test '+ val)
+  //   },
+  //   'param/#': function(val) {
+  //     console.log('param/# '+ val)
+  //   },
+  //   'param/param/param/test': function(val) {
+  //     console.log('param/param/param/test '+ val)
+  //   },
+  //   'template/+' (data, topic) {
+  //     if (topic.split('/').pop() === '12345') {
+  //       console.log('topic:', 'template/12345')
+  //     }
+  //   },
+  //   'template/+/param/param' (data, topic) {
+  //     if (topic.split('/')[1] === '12345') {
+  //       console.log('topic:', 'template/12345/param/param')
+  //     }
+  //   }
+  // },
+  // methods: {
+  //   clickSub: function() {
+  //       this.$mqtt.subscribe('param/param/param/test')
+  //   },
+  //   clickPub: function() {
+  //       this.$mqtt.publish('param/param/param/test', 'message')
+  //   }
+  // }
 }).$mount("#app");

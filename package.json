@@ -20,8 +20,10 @@
     "core-js": "3.6.5",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "mqtt": "^4.2.1",
     "tailwindcss": "1.8.10",
     "vue": "2.6.12",
+    "vue-mqtt": "^2.0.3",
     "vue-router": "3.4.3"
   },
   "devDependencies": {

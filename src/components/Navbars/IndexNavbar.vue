@@ -13,7 +13,7 @@
             class="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
             href="#pablo"
           >
-            Vue Notus
+            IoT Control
           </a>
         </router-link>
         <button
@@ -29,24 +29,23 @@
         :class="[navbarOpen ? 'block' : 'hidden']"
         id="example-navbar-warning"
       >
-        <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <!-- <ul class="flex flex-col lg:flex-row list-none mr-auto">
           <li class="flex items-center">
             <a
               class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-index-navbar"
             >
-              <i
-                class="text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
-              />
-              Docs
+            
+              <i class="text-gray-500 fab fa-github text-lg leading-lg mr-2" />
+              Source code
             </a>
           </li>
-        </ul>
+        </ul> -->
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <li class="flex items-center">
+          <!-- <li class="flex items-center">
             <index-dropdown />
-          </li>
-          <li class="flex items-center">
+          </li> -->
+          <!-- <li class="flex items-center">
             <a
               class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fvue-notus%2F%23%2F"
@@ -66,9 +65,9 @@
               <i class="text-gray-500 fab fa-twitter text-lg leading-lg" />
               <span class="lg:hidden inline-block ml-2">Tweet</span>
             </a>
-          </li>
+          </li> -->
 
-          <li class="flex items-center">
+          <!-- <li class="flex items-center">
             <a
               class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://github.com/creativetimofficial/vue-notus?ref=vn-index-navbar"
@@ -77,14 +76,17 @@
               <i class="text-gray-500 fab fa-github text-lg leading-lg" />
               <span class="lg:hidden inline-block ml-2">Star</span>
             </a>
-          </li>
+          </li> -->
 
           <li class="flex items-center">
             <button
               class="bg-green-500 text-white active:bg-green-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button"
+              href="https://github.com/Malikmal/Vue-IoT-MQTT"
             >
-              <i class="fas fa-arrow-alt-circle-down"></i> Download
+              <!-- <i class="fas fa-arrow-alt-circle-down"></i>  -->
+              <i class="text-white-500 fab fa-github text-lg leading-lg mr-2" />
+              Source code
             </button>
           </li>
         </ul>
@@ -94,7 +96,7 @@
 </template>
 
 <script>
-import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
+// import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
 
 export default {
   data() {
@@ -108,7 +110,7 @@ export default {
     },
   },
   components: {
-    IndexDropdown,
+    // IndexDropdown,
   },
 };
 </script>
