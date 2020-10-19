@@ -69,7 +69,6 @@ export default {
         // topic = topic.split('/').pop() ;
         // this.led[parseInt(topic)] = this.led[parseInt(topic)] ? 0 : 1; 
         this.isLoading = 0;
-        console.log(this.loading);
         this.ledtest = parseInt(data) ? 1 : 0;
       }
   }
