@@ -10,9 +10,11 @@ Template by Creative-Team
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run start
 ```
 
+## Demo Video
+[![Watch the video](https://img.youtube.com/vi/Cf85roH0IX8/hqdefault.jpg)](https://youtu.be/Cf85roH0IX8)
 
 
 ## Vue Notus <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fvue-notus%2F%23%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20VueJS%20UI%20Kit%20and%20Admin.%20Let%20Vue%20Notus%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level.%20" target="_blank">![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)</a>
