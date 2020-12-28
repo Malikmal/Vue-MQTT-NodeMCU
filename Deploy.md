@@ -17,7 +17,7 @@ module.exports = {
 npm run build
 
 #add and commit folder dist only to branch gh-pages
-git add dist && git commit -m "deploy dist subtree commit"
+git add dist -f && git commit -m "deploy dist subtree commit" 
 
 #push the commit to github 
 git subtree push --prefix dist origin gh-pages
@@ -25,4 +25,5 @@ git subtree push --prefix dist origin gh-pages
 #set your github setting to activate the github pages and change to gh-pages branch
 ```
 
+[reference](https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd)
 
