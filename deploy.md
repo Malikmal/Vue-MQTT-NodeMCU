@@ -17,7 +17,7 @@ module.exports = {
 npm run build
 
 #add and commit folder dist only to branch gh-pages
-git add dist -f && git commit -m "deploy dist subtree commit"
+git add dist -f && git commit -m "deploy dist subtree commit" 
 
 #push the commit to github 
 git subtree push --prefix dist origin gh-pages
