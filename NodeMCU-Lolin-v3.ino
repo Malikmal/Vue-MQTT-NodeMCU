@@ -16,7 +16,7 @@
 // Update these with values suitable for your network.
 const char* ssid = "lalalala";
 const char* password = "akudewelali";
-const char* mqtt_server = "test.mosquitto.org";//"broker.mqtt-dashboard.com";//"test.mosquitto.org";
+const char* mqtt_server = "broker.mqttdashboard.com";//"test.mosquitto.org";//"broker.mqtt-dashboard.com";//"test.mosquitto.org";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -95,6 +95,8 @@ void readAnalogPin() {
   if(abs(potensio - a) >= 5 ) { //my potensio is suck so i filter it
     sprintf (msg,  "%ld", potensio);
     client.publish(topicPotensio, msg);
+    sprintf (msg,  "%ld", potensio+12);
+    client.publish("tekkoma/potensio/2", msg);
     Serial.println(msg);
     delay(50);
   }
