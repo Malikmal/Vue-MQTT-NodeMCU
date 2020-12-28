@@ -78,8 +78,29 @@
             </a>
           </li> -->
 
+           <!-- <li class="flex items-center">
+             
+            <router-link 
+              to="/fuzzy" 
+              class="bg-blue-500 text-white active:bg-green-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            >
+              <i class="text-white-500 fa fa-microchip text-lg leading-lg mr-2" /> 
+              Fuzzy Page
+            </router-link>
+          </li>
           <li class="flex items-center">
-            <button
+             
+            <router-link 
+              to="/" 
+              class="bg-blue-500 text-white active:bg-green-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            >
+              <i class="text-white-500 fa fa-home text-lg leading-lg mr-2" /> 
+              Default Page
+            </router-link>
+          </li> -->
+
+          <li class="flex items-center">
+            <a
               class="bg-green-500 text-white active:bg-green-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button"
               href="https://github.com/Malikmal/Vue-IoT-MQTT"
@@ -87,7 +108,7 @@
               <!-- <i class="fas fa-arrow-alt-circle-down"></i>  -->
               <i class="text-white-500 fab fa-github text-lg leading-lg mr-2" />
               Source code
-            </button>
+            </a>
           </li>
         </ul>
       </div>

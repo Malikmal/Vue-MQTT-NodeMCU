@@ -34,6 +34,7 @@ import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
 import Index from "@/views/Index.vue";
 import IoTControl from "@/views/IoTControl.vue";
+import IoTControlFuzzy from "@/views/IoTControlFuzzy.vue";
 
 // routes
 
@@ -92,6 +93,10 @@ const routes = [
     path: "/",
     component: IoTControl,// Index,
   },
+  {
+    path: "/fuzzy",
+    component: IoTControlFuzzy,// Index,
+  },
   { path: "*", redirect: "/" },
 ];
 
@@ -107,7 +112,8 @@ Vue.use(VueRouter);
 //   protocolVersion: 4,
 //   clean: true, // Can also be false
 // });//'wss://test.mosquitto.org:8081');
-Vue.use(VueMqtt, 'wss://test.mosquitto.org:8081');
+// Vue.use(VueMqtt, 'wss://test.mosquitto.org:8081', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)});
+Vue.use(VueMqtt, 'ws://broker.mqttdashboard.com:8000/mqtt', {clientId: 'WebClient-' + parseInt(Math.random() * 100000)});
 const router = new VueRouter({
   routes,
 });

@@ -31,6 +31,9 @@
               </div>
             </div>
           </div>
+            <!-- <router-link to="/fuzzy" class="font-bold text-gray-800 mt-8">
+              Fuzzy Logic Control Page !
+            </router-link> -->
         </div>
       </div>
     </section>
@@ -55,17 +58,18 @@ export default {
       isLoading : 0,
     }
   },
-
   methods : {
       publishLed: function (event) {
         event.preventDefault();
         var topic = 'tekkoma/led';
         this.$mqtt.publish(topic, (this.ledtest) ? '0':'1');
+        // console.log("Asd");
         this.isLoading = 1;
       }
   },
   mqtt : {
       '+/led'(data){
+        console.log(data);
         // topic = topic.split('/').pop() ;
         // this.led[parseInt(topic)] = this.led[parseInt(topic)] ? 0 : 1; 
         this.isLoading = 0;
